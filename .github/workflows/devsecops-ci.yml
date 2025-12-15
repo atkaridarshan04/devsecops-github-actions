@@ -195,10 +195,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Update image tag in deployment.yml
+      # Update image tag in deployment.yaml
       - name: Update image tag
         run: |
-          sed -i "s|image: .*tic-tac-toe-app:.*|image: ghcr.io/atkaridarshan04/tic-tac-toe-app:${{ needs.docker.outputs.image_tag }}|" kubernetes/deployment.yml
+          sed -i "s|image: .*tic-tac-toe-app:.*|image: ghcr.io/atkaridarshan04/tic-tac-toe-app:${{ needs.docker.outputs.image_tag }}|" kubernetes/deployment.yaml
 
       # Commit and push change
       - name: Commit and push changes
@@ -206,6 +206,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add kubernetes/deployment.yml
+          git add kubernetes/deployment.yaml
           git commit -m "chore: Update deployment image tag to ${{ needs.docker.outputs.image_tag }}"
           git push
