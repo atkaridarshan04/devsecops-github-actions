@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe
-        image: ghcr.io/atkaridarshan04/tic-tac-toe-app:latest
+        image: ghcr.io/atkaridarshan04/tic-tac-toe-app:78fc7f7aca65f76dcaa163f5d7a266118e9a69af
         imagePullPolicy: Always
         ports:
         - containerPort: 80
