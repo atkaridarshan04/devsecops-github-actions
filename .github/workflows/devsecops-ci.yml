@@ -25,8 +25,6 @@ jobs:
       # Secrets Scanning (Gitleaks)
       - name: Gitleaks
         uses: gitleaks/gitleaks-action@v2
-        with:
-          fail: true
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
