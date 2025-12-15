@@ -7,7 +7,7 @@ on:
       - 'kubernetes/**'  # Prevent infinite loops
       - 'README.md'
       - 'assets/**'
-      - '.github/README.md'
+      - '.github/workflows/README.md'
   pull_request:
     branches: [ "main" ]
   workflow_dispatch: 

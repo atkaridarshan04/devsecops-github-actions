@@ -226,7 +226,7 @@ permissions:
 ```bash
 - name: Update image tag
   run: |
-    sed -i "s|image: .*tic-tac-toe-app:.*|image: ghcr.io/atkaridarshan04/devsecops-github-actions:${{ needs.docker.outputs.image_tag }}|" kubernetes/deployment.yaml
+    sed -i "s|image: ${REGISTRY}/${IMAGE_NAME}:.*|image: ${REGISTRY}/${IMAGE_NAME}:${{ needs.docker.outputs.image_tag }}|" kubernetes/deployment.yaml
 ```
 
 ## 🔧 Workflow Triggers
@@ -240,7 +240,7 @@ on:
       - 'kubernetes/**'  # Prevent infinite loops
       - 'README.md'
       - 'assets/**'
-      - '.github/README.md'
+      - '.github/workflows/README.md'
 ```
 
 ### Pull Request Events

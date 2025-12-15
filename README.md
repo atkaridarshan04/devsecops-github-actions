@@ -20,7 +20,7 @@ A comprehensive DevSecOps implementation showcasing a complete CI/CD pipeline wi
 
 ![DevSecOps Pipeline Architecture](./assets/github-actions-devsecops-pipeline-light.png)
 
-This DevSecOps pipeline implements a comprehensive security-first approach with the following stages. For comprehensive pipeline documentation and workflow details **[.github/README.md](./.github/README.md)**
+This DevSecOps pipeline implements a comprehensive security-first approach with the following stages. For comprehensive pipeline documentation and workflow details **[.github/workflows/README.md](./.github/workflows/README.md)**
 
 ### 🔄 Pipeline Flow
 1. **Source Control** - Developer commits trigger the pipeline
