@@ -28,7 +28,7 @@ jobs:
         with:
           fail: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
       # Dependency & IaC Scan (Trivy FS)
       - name: Trivy FS Scan
@@ -151,7 +151,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_TOKEN }}
   
       # Build Docker Image
       - name: Build Docker image
