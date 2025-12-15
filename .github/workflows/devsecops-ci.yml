@@ -4,9 +4,10 @@ on:
   push:
     branches: [ "main" ]
     paths-ignore:
-      - 'kubernetes/**'  # Ignore changes to this file to prevent loops
+      - 'kubernetes/**'  # Prevent infinite loops
       - 'README.md'
       - 'assets/**'
+      - '.github/README.md'
   pull_request:
     branches: [ "main" ]
   workflow_dispatch: 
