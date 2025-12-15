@@ -192,6 +192,9 @@ jobs:
     needs: docker
     permissions:
       contents: write   # required to push commit
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -199,7 +202,7 @@ jobs:
       # Update image tag in deployment.yaml
       - name: Update image tag
         run: |
-          sed -i "s|image: .*tic-tac-toe-app:.*|image: ghcr.io/atkaridarshan04/tic-tac-toe-app:${{ needs.docker.outputs.image_tag }}|" kubernetes/deployment.yaml
+          sed -i "s|image: ${REGISTRY}/${IMAGE_NAME}:.*|image: ${REGISTRY}/${IMAGE_NAME}:${{ needs.docker.outputs.image_tag }}|" kubernetes/deployment.yaml
 
       # Commit and push change
       - name: Commit and push changes
